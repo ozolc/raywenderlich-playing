@@ -29,6 +29,9 @@
                                         <color key="value" red="0.3411764705882353" green="0.85490196078431369" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dpd-Vs-Wjb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAX-Rc-BFS" customClass="PushButton" customModule="Fio" customModuleProvider="target">
                                 <rect key="frame" x="162.5" y="513.5" width="50" height="50"/>
@@ -42,17 +45,55 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ylT-gm-wji"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sv-W3-sAO" customClass="CounterView" customModule="Fio" customModuleProvider="target">
+                                <rect key="frame" x="72.5" y="123.5" width="230" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctI-cS-Tmx">
+                                        <rect key="frame" x="104" y="93.5" width="22" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ctI-cS-Tmx" firstAttribute="centerY" secondItem="6Sv-W3-sAO" secondAttribute="centerY" id="8pN-ZQ-6fq"/>
+                                    <constraint firstAttribute="width" constant="230" id="EFq-ac-mL7"/>
+                                    <constraint firstItem="ctI-cS-Tmx" firstAttribute="centerX" secondItem="6Sv-W3-sAO" secondAttribute="centerX" id="lJ6-of-Fhm"/>
+                                    <constraint firstAttribute="height" constant="230" id="sip-nT-Cra"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.3411764705882353" green="0.85490196078431369" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pmX-Hl-hrB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3oO-5Q-MYO"/>
                             <constraint firstItem="mAX-Rc-BFS" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EbB-Ya-Uef"/>
+                            <constraint firstItem="pmX-Hl-hrB" firstAttribute="top" secondItem="6Sv-W3-sAO" secondAttribute="bottom" constant="40" id="R3G-xC-Uze"/>
+                            <constraint firstItem="6Sv-W3-sAO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ahX-p2-xL0"/>
                             <constraint firstItem="mAX-Rc-BFS" firstAttribute="top" secondItem="pmX-Hl-hrB" secondAttribute="bottom" constant="20" id="t8s-u7-PGm"/>
                             <constraint firstItem="pmX-Hl-hrB" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="100" id="w7a-z9-9zV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="ctI-cS-Tmx" id="0Ad-eN-Gjz"/>
+                        <outlet property="counterView" destination="6Sv-W3-sAO" id="V6t-cx-EhJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
