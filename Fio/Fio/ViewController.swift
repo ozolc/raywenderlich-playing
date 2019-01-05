@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     var isGraphViewShowing = false
     
+    // Label outlets
+    @IBOutlet weak var averageWaterDrink: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
+    
     // Counter outlets
     @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var counterLabel: UILabel!
@@ -23,6 +28,36 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         counterLabel.text = String(counterView.counter)
         
+    }
+    
+    func setupGraphDisplay() {
+        let maxDayIndex = stackView.arrangedSubviews.count - 1
+        
+        // 1 - replace last day with today's actual data
+        graphView.graphPoints[graphView.graphPoints.count - 1] = counterView.counter
+        
+        // 2 - indicate that the graph needs to be redrawn
+        graphView.setNeedsDisplay()
+        maxLabel.text = "\(graphView.graphPoints.max()!)"
+        
+        // 3 - calculate average from graphPoints
+        let average = graphView.graphPoints.reduce(0, +) / graphView.graphPoints.count
+        averageWaterDrink.text = "\(average)"
+        
+        // 4 - setup date formatter and calendar
+        let today = Date()
+        let calendar = Calendar.current
+        
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("EEEEE")
+        
+        // 5 - set up the day name labels with correct days
+        for i in 0...maxDayIndex {
+            if let date = calendar.date(byAdding: .day, value: -i, to: today),
+                let label = stackView.arrangedSubviews[maxDayIndex - i] as? UILabel {
+                label.text = formatter.string(from: date)
+            }
+        }
     }
     
     @IBAction func pushButtonPressed(_ button: PushButton) {
@@ -55,6 +90,7 @@ class ViewController: UIViewController {
                               options: [.transitionFlipFromRight, .showHideTransitionViews],
                               completion: nil)
         }
+        setupGraphDisplay()
         isGraphViewShowing = !isGraphViewShowing
     }
 }
