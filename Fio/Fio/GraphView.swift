@@ -98,6 +98,16 @@ import UIKit
         
         graphPath.stroke()
         
+        // Draw the circles on top of the graph stroke
+        for i in 0..<graphPoints.count {
+            var point = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
+            point.x -= Constants.circleDiameter / 2
+            point.y -= Constants.circleDiameter / 2
+            
+            let circle = UIBezierPath(ovalIn: CGRect(origin: point, size: CGSize(width: Constants.circleDiameter, height: Constants.circleDiameter)))
+            circle.fill()
+        }
+        
     }
     
 }
