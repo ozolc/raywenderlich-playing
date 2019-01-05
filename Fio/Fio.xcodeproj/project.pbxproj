@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B01BC09221DE5A2F00F149BD /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BC09121DE5A2F00F149BD /* CounterView.swift */; };
+		B0384AF321E0C44000F64F09 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0384AF221E0C44000F64F09 /* GraphView.swift */; };
 		B0FC452021DE3E05007C8DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC451F21DE3E05007C8DFD /* AppDelegate.swift */; };
 		B0FC452221DE3E05007C8DFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC452121DE3E05007C8DFD /* ViewController.swift */; };
 		B0FC452521DE3E05007C8DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FC452321DE3E05007C8DFD /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		B01BC09121DE5A2F00F149BD /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		B0384AF221E0C44000F64F09 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B0FC451C21DE3E05007C8DFD /* Fio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FC451F21DE3E05007C8DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FC452121DE3E05007C8DFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				B0FC451F21DE3E05007C8DFD /* AppDelegate.swift */,
 				B01BC09121DE5A2F00F149BD /* CounterView.swift */,
+				B0384AF221E0C44000F64F09 /* GraphView.swift */,
 				B0FC452121DE3E05007C8DFD /* ViewController.swift */,
 				B0FC453121DE3E5A007C8DFD /* PushButton.swift */,
 				B0FC452321DE3E05007C8DFD /* Main.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0384AF321E0C44000F64F09 /* GraphView.swift in Sources */,
 				B0FC452221DE3E05007C8DFD /* ViewController.swift in Sources */,
 				B0FC452021DE3E05007C8DFD /* AppDelegate.swift in Sources */,
 				B0FC453221DE3E5A007C8DFD /* PushButton.swift in Sources */,
