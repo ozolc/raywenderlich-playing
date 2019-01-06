@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     var isGraphViewShowing = false
     
+    @IBOutlet weak var medalView: MedalView!
+    
     // Label outlets
     @IBOutlet weak var averageWaterDrink: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
@@ -27,7 +29,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         counterLabel.text = String(counterView.counter)
-        
+        checkTotal()
     }
     
     func setupGraphDisplay() {
@@ -72,6 +74,7 @@ class ViewController: UIViewController {
         if isGraphViewShowing {
             counterViewTap(nil)
         }
+        checkTotal()
     }
     
     @IBAction func counterViewTap(_ gesture: UITapGestureRecognizer?) {
@@ -92,6 +95,14 @@ class ViewController: UIViewController {
         }
         setupGraphDisplay()
         isGraphViewShowing = !isGraphViewShowing
+    }
+    
+    func checkTotal() {
+        if counterView.counter >= 8 {
+            medalView.showMedal(show: true)
+        } else {
+            medalView.showMedal(show: false)
+        }
     }
 }
 

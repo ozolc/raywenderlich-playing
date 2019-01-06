@@ -10,6 +10,7 @@
 		B01BC09221DE5A2F00F149BD /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BC09121DE5A2F00F149BD /* CounterView.swift */; };
 		B0384AF321E0C44000F64F09 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0384AF221E0C44000F64F09 /* GraphView.swift */; };
 		B04443FC21E203B40021CBFC /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04443FB21E203B40021CBFC /* BackgroundView.swift */; };
+		B04443FF21E2122D0021CBFC /* MedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04443FE21E2122D0021CBFC /* MedalView.swift */; };
 		B0FC452021DE3E05007C8DFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC451F21DE3E05007C8DFD /* AppDelegate.swift */; };
 		B0FC452221DE3E05007C8DFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC452121DE3E05007C8DFD /* ViewController.swift */; };
 		B0FC452521DE3E05007C8DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FC452321DE3E05007C8DFD /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		B0384AF221E0C44000F64F09 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B04443FB21E203B40021CBFC /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		B04443FD21E20BC10021CBFC /* MedalDrawing playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "MedalDrawing playground.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B04443FE21E2122D0021CBFC /* MedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalView.swift; sourceTree = "<group>"; };
 		B0FC451C21DE3E05007C8DFD /* Fio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FC451F21DE3E05007C8DFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0FC452121DE3E05007C8DFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				B04443FB21E203B40021CBFC /* BackgroundView.swift */,
 				B01BC09121DE5A2F00F149BD /* CounterView.swift */,
 				B0384AF221E0C44000F64F09 /* GraphView.swift */,
+				B04443FE21E2122D0021CBFC /* MedalView.swift */,
 				B0FC452121DE3E05007C8DFD /* ViewController.swift */,
 				B0FC453121DE3E5A007C8DFD /* PushButton.swift */,
 				B0FC452321DE3E05007C8DFD /* Main.storyboard */,
@@ -151,6 +154,7 @@
 			files = (
 				B04443FC21E203B40021CBFC /* BackgroundView.swift in Sources */,
 				B0384AF321E0C44000F64F09 /* GraphView.swift in Sources */,
+				B04443FF21E2122D0021CBFC /* MedalView.swift in Sources */,
 				B0FC452221DE3E05007C8DFD /* ViewController.swift in Sources */,
 				B0FC452021DE3E05007C8DFD /* AppDelegate.swift in Sources */,
 				B0FC453221DE3E5A007C8DFD /* PushButton.swift in Sources */,
