@@ -10,12 +10,9 @@ import UIKit
 
 class RangeSlider: UIControl {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    var minimumValue = 0.0
+    var maximumValue = 1.0
+    var lowerValue = 0.2
+    var upperValue = 0.8
 
 }
