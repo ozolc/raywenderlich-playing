@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         view.addSubview(rangeSlider)
         
         rangeSlider.addTarget(self, action: #selector(rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
+        
     }
     
     @objc func rangeSliderValueChanged(rangeSlider: RangeSlider) {

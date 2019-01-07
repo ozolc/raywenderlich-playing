@@ -11,17 +11,58 @@ import QuartzCore
 
 class RangeSlider: UIControl {
 
-    var minimumValue = 0.0
-    var maximumValue = 1.0
-    var lowerValue = 0.2
-    var upperValue = 0.8
+    var minimumValue: Double = 0.0 {
+        didSet {
+            updateLayerFrames()
+        }
+    }
+    
+    var maximumValue: Double = 1.0 {
+        didSet {
+            updateLayerFrames()
+        }
+    }
+    
+    var lowerValue: Double = 0.2 {
+        didSet {
+            updateLayerFrames()
+        }
+    }
+    
+    var upperValue: Double = 0.8 {
+        didSet {
+            updateLayerFrames()
+        }
+    }
+
     var previousLocation = CGPoint()
     
-    var trackTintColor = UIColor(white: 0.9, alpha: 1.0)
-    var trackHighlightTintColor = UIColor(red: 0.0, green: 0.45, blue: 0.94, alpha: 1.0)
-    var thumbTintColor = UIColor.white
+    var trackTintColor: UIColor = UIColor(white: 0.9, alpha: 1.0) {
+        didSet {
+            trackLayer.setNeedsDisplay()
+        }
+    }
     
-    var curvaceousness : CGFloat = 1.0
+    var trackHighlightTintColor: UIColor = UIColor(red: 0.0, green: 0.45, blue: 0.94, alpha: 1.0) {
+        didSet {
+            trackLayer.setNeedsDisplay()
+        }
+    }
+    
+    var thumbTintColor: UIColor = UIColor.white {
+        didSet {
+            lowerThumbLayer.setNeedsDisplay()
+            upperThumbLayer.setNeedsDisplay()
+        }
+    }
+    
+    var curvaceousness: CGFloat = 1.0 {
+        didSet {
+            trackLayer.setNeedsDisplay()
+            lowerThumbLayer.setNeedsDisplay()
+            upperThumbLayer.setNeedsDisplay()
+        }
+    }
     
     let trackLayer = RangeSliderTrackLayer()
     let lowerThumbLayer = RangeSliderThumbLayer()
@@ -57,6 +98,9 @@ class RangeSlider: UIControl {
     }
     
     func updateLayerFrames() {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        
         trackLayer.frame = bounds.insetBy(dx: 0.0, dy: bounds.height / 3)
         trackLayer.setNeedsDisplay()
         
@@ -74,6 +118,8 @@ class RangeSlider: UIControl {
                                        width: thumbWidth,
                                        height: thumbWidth)
         upperThumbLayer.setNeedsDisplay()
+        
+        CATransaction.commit()
     }
     
     func positionForValue(value: Double) -> Double {
@@ -120,15 +166,7 @@ class RangeSlider: UIControl {
         } else if upperThumbLayer.highlighted {
             upperValue += deltaValue
             upperValue = boundValue(value: upperValue, toLowerValue: lowerValue, upperValue: maximumValue)
-        }
-        
-        // 3. Update the UI
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        
-        updateLayerFrames()
-        
-        CATransaction.commit()
+        }        
         
         sendActions(for: .valueChanged)
         return true
