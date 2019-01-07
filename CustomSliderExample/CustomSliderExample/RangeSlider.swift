@@ -17,7 +17,13 @@ class RangeSlider: UIControl {
     var upperValue = 0.8
     var previousLocation = CGPoint()
     
-    let trackLayer = CALayer()
+    var trackTintColor = UIColor(white: 0.9, alpha: 1.0)
+    var trackHighlightTintColor = UIColor(red: 0.0, green: 0.45, blue: 0.94, alpha: 1.0)
+    var thumbTintColor = UIColor.white
+    
+    var curvaceousness : CGFloat = 1.0
+    
+    let trackLayer = RangeSliderTrackLayer()
     let lowerThumbLayer = RangeSliderThumbLayer()
     let upperThumbLayer = RangeSliderThumbLayer()
     
@@ -28,13 +34,16 @@ class RangeSlider: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        trackLayer.backgroundColor = UIColor.blue.cgColor
+        trackLayer.rangeSlider = self
+        trackLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(trackLayer)
         
-        lowerThumbLayer.backgroundColor = UIColor.green.cgColor
+        lowerThumbLayer.rangeSlider = self
+        lowerThumbLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(lowerThumbLayer)
         
-        upperThumbLayer.backgroundColor = UIColor.green.cgColor
+        upperThumbLayer.rangeSlider = self
+        upperThumbLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(upperThumbLayer)
         
         updateLayerFrames()

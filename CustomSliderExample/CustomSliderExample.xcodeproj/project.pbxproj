@@ -14,6 +14,7 @@
 		B0B9C03421E340860098A5C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B9C03221E340860098A5C1 /* LaunchScreen.storyboard */; };
 		B0B9C03C21E3419F0098A5C1 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9C03B21E3419F0098A5C1 /* RangeSlider.swift */; };
 		B0B9C03E21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */; };
+		B0B9C04021E3584A0098A5C1 /* RangeSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9C03F21E3584A0098A5C1 /* RangeSliderTrackLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B0B9C03521E340860098A5C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0B9C03B21E3419F0098A5C1 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderThumbLayer.swift; sourceTree = "<group>"; };
+		B0B9C03F21E3584A0098A5C1 /* RangeSliderTrackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderTrackLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				B0B9C02921E340850098A5C1 /* AppDelegate.swift */,
 				B0B9C02B21E340850098A5C1 /* ViewController.swift */,
 				B0B9C03B21E3419F0098A5C1 /* RangeSlider.swift */,
+				B0B9C03F21E3584A0098A5C1 /* RangeSliderTrackLayer.swift */,
 				B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */,
 				B0B9C02D21E340850098A5C1 /* Main.storyboard */,
 				B0B9C03021E340860098A5C1 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B9C02C21E340850098A5C1 /* ViewController.swift in Sources */,
+				B0B9C04021E3584A0098A5C1 /* RangeSliderTrackLayer.swift in Sources */,
 				B0B9C03C21E3419F0098A5C1 /* RangeSlider.swift in Sources */,
 				B0B9C02A21E340850098A5C1 /* AppDelegate.swift in Sources */,
 				B0B9C03E21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift in Sources */,
