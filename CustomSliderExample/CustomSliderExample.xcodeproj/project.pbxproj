@@ -13,6 +13,7 @@
 		B0B9C03121E340860098A5C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B9C03021E340860098A5C1 /* Assets.xcassets */; };
 		B0B9C03421E340860098A5C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B9C03221E340860098A5C1 /* LaunchScreen.storyboard */; };
 		B0B9C03C21E3419F0098A5C1 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9C03B21E3419F0098A5C1 /* RangeSlider.swift */; };
+		B0B9C03E21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B0B9C03321E340860098A5C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0B9C03521E340860098A5C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0B9C03B21E3419F0098A5C1 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSliderThumbLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B0B9C03021E340860098A5C1 /* Assets.xcassets */,
 				B0B9C03221E340860098A5C1 /* LaunchScreen.storyboard */,
 				B0B9C03521E340860098A5C1 /* Info.plist */,
+				B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */,
 			);
 			path = CustomSliderExample;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				B0B9C02C21E340850098A5C1 /* ViewController.swift in Sources */,
 				B0B9C03C21E3419F0098A5C1 /* RangeSlider.swift in Sources */,
 				B0B9C02A21E340850098A5C1 /* AppDelegate.swift in Sources */,
+				B0B9C03E21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

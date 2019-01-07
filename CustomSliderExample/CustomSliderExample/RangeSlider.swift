@@ -17,8 +17,8 @@ class RangeSlider: UIControl {
     var upperValue = 0.8
     
     let trackLayer = CALayer()
-    let lowerThumbLayer = CALayer()
-    let upperThumbLayer = CALayer()
+    let lowerThumbLayer = RangeSliderThumbLayer()
+    let upperThumbLayer = RangeSliderThumbLayer()
     
     var thumbWidth: CGFloat {
         return CGFloat(bounds.height)
@@ -37,6 +37,9 @@ class RangeSlider: UIControl {
         layer.addSublayer(upperThumbLayer)
         
         updateLayerFrames()
+        
+        lowerThumbLayer.rangeSlider = self
+        upperThumbLayer.rangeSlider = self
     }
     
     required init?(coder aDecoder: NSCoder) {
