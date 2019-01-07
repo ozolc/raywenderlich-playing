@@ -17,6 +17,12 @@ class ViewController: UIViewController {
         
         rangeSlider.backgroundColor = UIColor.red
         view.addSubview(rangeSlider)
+        
+        rangeSlider.addTarget(self, action: #selector(rangeSliderValueChanged(rangeSlider:)), for: .valueChanged)
+    }
+    
+    @objc func rangeSliderValueChanged(rangeSlider: RangeSlider) {
+        print("Range slider value changed: (\(rangeSlider.lowerValue) \(rangeSlider.upperValue)")
     }
     
     override func viewDidLayoutSubviews() {

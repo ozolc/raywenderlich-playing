@@ -107,7 +107,7 @@ class RangeSlider: UIControl {
         // 2. Update the values
         if lowerThumbLayer.highlighted {
             lowerValue += deltaValue
-            lowerValue = boundValue(value: upperValue, toLowerValue: lowerValue, upperValue: maximumValue)
+            lowerValue = boundValue(value: lowerValue, toLowerValue: minimumValue, upperValue: upperValue)
         } else if upperThumbLayer.highlighted {
             upperValue += deltaValue
             upperValue = boundValue(value: upperValue, toLowerValue: lowerValue, upperValue: maximumValue)
@@ -121,6 +121,7 @@ class RangeSlider: UIControl {
         
         CATransaction.commit()
         
+        sendActions(for: .valueChanged)
         return true
     }
     
