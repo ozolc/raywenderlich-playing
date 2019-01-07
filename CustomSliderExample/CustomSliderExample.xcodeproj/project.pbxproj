@@ -61,11 +61,11 @@
 				B0B9C02921E340850098A5C1 /* AppDelegate.swift */,
 				B0B9C02B21E340850098A5C1 /* ViewController.swift */,
 				B0B9C03B21E3419F0098A5C1 /* RangeSlider.swift */,
+				B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */,
 				B0B9C02D21E340850098A5C1 /* Main.storyboard */,
 				B0B9C03021E340860098A5C1 /* Assets.xcassets */,
 				B0B9C03221E340860098A5C1 /* LaunchScreen.storyboard */,
 				B0B9C03521E340860098A5C1 /* Info.plist */,
-				B0B9C03D21E34C6F0098A5C1 /* RangeSliderThumbLayer.swift */,
 			);
 			path = CustomSliderExample;
 			sourceTree = "<group>";

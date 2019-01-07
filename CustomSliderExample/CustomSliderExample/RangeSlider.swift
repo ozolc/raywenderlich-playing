@@ -15,6 +15,7 @@ class RangeSlider: UIControl {
     var maximumValue = 1.0
     var lowerValue = 0.2
     var upperValue = 0.8
+    var previousLocation = CGPoint()
     
     let trackLayer = CALayer()
     let lowerThumbLayer = RangeSliderThumbLayer()
@@ -75,6 +76,57 @@ class RangeSlider: UIControl {
         didSet {
             updateLayerFrames()
         }
+    }
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        previousLocation = touch.location(in: self)
+        
+        // Hit test the thumb layers
+        if lowerThumbLayer.frame.contains(previousLocation) {
+            lowerThumbLayer.highlighted = true
+        } else if upperThumbLayer.frame.contains(previousLocation) {
+            upperThumbLayer.highlighted = true
+        }
+        
+        return lowerThumbLayer.highlighted || upperThumbLayer.highlighted
+    }
+    
+    func boundValue(value: Double, toLowerValue lowerValue: Double, upperValue: Double) -> Double {
+        return min(max(value, lowerValue), upperValue)
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let location = touch.location(in: self)
+        
+        // 1. Determine by how much the user has dragged
+        let deltaLocation = Double(location.x - previousLocation.x)
+        let deltaValue = (maximumValue - minimumValue) * deltaLocation / Double(bounds.width - thumbWidth)
+        
+        previousLocation = location
+        
+        // 2. Update the values
+        if lowerThumbLayer.highlighted {
+            lowerValue += deltaValue
+            lowerValue = boundValue(value: upperValue, toLowerValue: lowerValue, upperValue: maximumValue)
+        } else if upperThumbLayer.highlighted {
+            upperValue += deltaValue
+            upperValue = boundValue(value: upperValue, toLowerValue: lowerValue, upperValue: maximumValue)
+        }
+        
+        // 3. Update the UI
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        
+        updateLayerFrames()
+        
+        CATransaction.commit()
+        
+        return true
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        lowerThumbLayer.highlighted = false
+        upperThumbLayer.highlighted = false
     }
     
 }

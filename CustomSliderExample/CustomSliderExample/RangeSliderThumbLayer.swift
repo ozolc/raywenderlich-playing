@@ -11,7 +11,7 @@ import QuartzCore
 
 class RangeSliderThumbLayer: CALayer {
 
-    var highlighhted = false
+    var highlighted = false
     weak var rangeSlider: RangeSlider?
     
 }
