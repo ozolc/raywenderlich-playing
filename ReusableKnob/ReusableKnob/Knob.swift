@@ -110,6 +110,14 @@ class Knob: UIControl {
     
     // 5
     setValue(angleValue)
+    
+    if isContinious {
+      sendActions(for: .valueChanged)
+    } else {
+      if gesture.state == .ended || gesture.state == .cancelled {
+        sendActions(for: .valueChanged)
+      }
+    }
   }
   
 
