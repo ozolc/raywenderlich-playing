@@ -36,6 +36,26 @@ class Knob: UIControl {
   
   private let renderer = KnobRenderer()
   
+  var lineWidth: CGFloat {
+    get { return renderer.lineWidth }
+    set { renderer.lineWidth = newValue }
+  }
+  
+  var startAngle: CGFloat {
+    get { return renderer.startAngle }
+    set { renderer.startAngle = newValue }
+  }
+  
+  var endAngle: CGFloat {
+    get { return renderer.endAngle }
+    set { renderer.endAngle = newValue }
+  }
+  
+  var pointerLength: CGFloat {
+    get { return renderer.pointerLength }
+    set { renderer.pointerLength = newValue }
+  }
+  
   func setValue(_ newValue: Float, animated: Bool = false) {
     value = min(maximumValue, max(minimumValue, newValue))
   }
@@ -60,7 +80,6 @@ class Knob: UIControl {
     layer.addSublayer(renderer.trackLayer)
     layer.addSublayer(renderer.pointerLayer)
   }
-  
 
 }
 

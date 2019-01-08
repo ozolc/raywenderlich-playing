@@ -37,6 +37,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      knob.lineWidth = 4
+      knob.pointerLength = 12
     }
     
     @IBAction func handleValueChanged(_ sender: Any) {
