@@ -29,6 +29,16 @@
 import UIKit
 
 class Knob: UIControl {
+  
+  var minimumValue: Float = 0
+  var maximumValue: Float = 1
+  private (set) var value: Float = 0
+  
+  func setValue(_ newValue: Float, animated: Bool = false) {
+    value = min(maximumValue, max(minimumValue, newValue))
+  }
+  
+  var isContinious = true
 
   override init(frame: CGRect) {
     super.init(frame: frame)
