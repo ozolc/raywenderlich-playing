@@ -58,6 +58,11 @@ class Knob: UIControl {
   
   func setValue(_ newValue: Float, animated: Bool = false) {
     value = min(maximumValue, max(minimumValue, newValue))
+    
+    let angleRange = endAngle - startAngle
+    let valueRange = maximumValue - minimumValue
+    let angleValue = CGFloat(value - minimumValue) / CGFloat(valueRange) * angleRange + startAngle
+    renderer.setPointerAngle(angleValue, animated: animated)
   }
   
   var isContinious = true
@@ -131,6 +136,13 @@ private class KnobRenderer {
   }
   
   func setPointerAngle(_ newPointerAngle: CGFloat, animated: Bool = false) {
+    CATransaction.begin()
+    CATransaction.setDisableActions(true)
+    
+    pointerLayer.transform = CATransform3DMakeRotation(newPointerAngle, 0, 0, 1)
+    
+    CATransaction.commit()
+    
     pointerAngle = newPointerAngle
   }
   

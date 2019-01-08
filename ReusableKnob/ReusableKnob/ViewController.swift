@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleValueChanged(_ sender: Any) {
-        
+        knob.setValue(valueSlider.value)
     }
     
     @IBAction func handleRandomButtonPressed(_ sender: Any) {
