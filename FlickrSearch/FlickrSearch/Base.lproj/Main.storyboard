@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Flickr Collection View Controller-->
         <scene sceneID="dSK-eN-Z6i">
             <objects>
-                <collectionViewController id="brR-dE-VbF" sceneMemberID="viewController">
+                <collectionViewController id="brR-dE-VbF" customClass="FlickrCollectionViewController" customModule="FlickrSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2F2-xk-VUx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,19 @@
                             <outlet property="delegate" destination="brR-dE-VbF" id="WKY-ik-wkU"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="ePI-iJ-yhp"/>
+                    <navigationItem key="navigationItem" id="ePI-iJ-yhp">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" id="uLC-F8-oP7">
+                            <rect key="frame" x="109" y="7" width="157" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            <connections>
+                                <outlet property="delegate" destination="brR-dE-VbF" id="To5-Tw-gxT"/>
+                            </connections>
+                        </textField>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIR-eo-LUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
