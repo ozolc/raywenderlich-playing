@@ -84,7 +84,35 @@ class Knob: UIControl {
     
     layer.addSublayer(renderer.trackLayer)
     layer.addSublayer(renderer.pointerLayer)
+    
+    let gestureRecognizer = RotationGestureRecognizer(target: self, action: #selector(Knob.handleGesture(_:)))
+    addGestureRecognizer(gestureRecognizer)
   }
+  
+  @objc private func handleGesture(_ gesture: RotationGestureRecognizer) {
+    // 1
+    let midPointAngle = (2 * CGFloat(Double.pi) + startAngle - endAngle) / 2 + endAngle
+    // 2
+    var boundedAngle = gesture.touchAngle
+    if boundedAngle > midPointAngle {
+      boundedAngle -= 2 * CGFloat(Double.pi)
+    } else if boundedAngle < (midPointAngle - 2 * CGFloat(Double.pi)) {
+      boundedAngle -= 2 * CGFloat(Double.pi)
+    }
+    
+    // 3
+    boundedAngle = min(endAngle, max(startAngle, boundedAngle))
+    
+    // 4
+    let angleRange = endAngle - startAngle
+    let valueRange = maximumValue - minimumValue
+    let angleValue = Float(boundedAngle - startAngle) / Float(angleRange) * valueRange + minimumValue
+    
+    // 5
+    setValue(angleValue)
+  }
+  
+
 
 }
 
