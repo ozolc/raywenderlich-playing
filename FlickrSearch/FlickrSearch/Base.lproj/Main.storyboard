@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="aeA-SN-um3">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="aeA-SN-um3" customClass="FlickrPhotoCell" customModule="FlickrSearch" customModuleProvider="target">
                                 <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -41,6 +41,9 @@
                                     <constraint firstItem="Wzl-Oc-MFz" firstAttribute="leading" secondItem="aeA-SN-um3" secondAttribute="leading" id="a0T-vb-sYg"/>
                                     <constraint firstAttribute="bottom" secondItem="Wzl-Oc-MFz" secondAttribute="bottom" id="feQ-4z-kCN"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="Wzl-Oc-MFz" id="byG-Cp-UPw"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
