@@ -141,6 +141,17 @@ private class KnobRenderer {
     
     pointerLayer.transform = CATransform3DMakeRotation(newPointerAngle, 0, 0, 1)
     
+    if animated {
+      let midAngleValue = (max(newPointerAngle, pointerAngle) - min(newPointerAngle, pointerAngle)) / 2
+        + min(newPointerAngle, pointerAngle)
+      let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+      animation.values = [pointerAngle, midAngleValue, newPointerAngle]
+      animation.keyTimes = [0.0, 0.5, 1.0]
+      animation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)]
+      pointerLayer.add(animation, forKey: nil)
+    }
+
+    
     CATransaction.commit()
     
     pointerAngle = newPointerAngle
