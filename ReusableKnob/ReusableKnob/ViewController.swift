@@ -29,26 +29,35 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  @IBOutlet var valueLabel: UILabel!
+  @IBOutlet var valueSlider: UISlider!
+  @IBOutlet var animateSwitch: UISwitch!
+  @IBOutlet weak var knob: Knob!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    @IBOutlet var valueLabel: UILabel!
-    @IBOutlet var valueSlider: UISlider!
-    @IBOutlet var animateSwitch: UISwitch!
-    @IBOutlet weak var knob: Knob!
+    knob.lineWidth = 4
+    knob.pointerLength = 12
+    knob.setValue(valueSlider.value)
+    updateLabel()
+  }
+  
+  @IBAction func handleValueChanged(_ sender: Any) {
+    knob.setValue(valueSlider.value)
+    updateLabel()
+  }
+  
+  @IBAction func handleRandomButtonPressed(_ sender: Any) {
+    let randomValue = Float(arc4random_uniform(101)) / 100.0
+    knob.setValue(randomValue, animated: animateSwitch.isOn)
+    valueSlider.setValue(Float(randomValue), animated: animateSwitch.isOn)
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      knob.lineWidth = 4
-      knob.pointerLength = 12
-    }
-    
-    @IBAction func handleValueChanged(_ sender: Any) {
-        knob.setValue(valueSlider.value)
-    }
-    
-    @IBAction func handleRandomButtonPressed(_ sender: Any) {
-      let randomValue = Float(arc4random_uniform(101)) / 100.0
-      knob.setValue(randomValue, animated: animateSwitch.isOn)
-      valueSlider.setValue(Float(randomValue), animated: animateSwitch.isOn)
-    }
+    updateLabel()
+  }
+  
+  func updateLabel() {
+    valueLabel.text = String(format: "%.2f", knob.value)
+  }
 }
