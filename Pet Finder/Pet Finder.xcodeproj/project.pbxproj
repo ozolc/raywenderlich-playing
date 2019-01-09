@@ -19,17 +19,8 @@
 		2269E9891B07D54200315741 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2269E9881B07D54200315741 /* Images.xcassets */; };
 		2269E98C1B07D54200315741 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2269E98A1B07D54200315741 /* LaunchScreen.xib */; };
 		2269E9A21B07E03500315741 /* PetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2269E9A11B07E03500315741 /* PetTableViewController.swift */; };
+		B0619EB321E65D8100659FF3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0619EB221E65D8100659FF3 /* Theme.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2269E9921B07D54200315741 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2269E9721B07D54200315741 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2269E9791B07D54200315741;
-			remoteInfo = "Pet Finder";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0E0D9D0C1E7F2AA300E1264B /* Solar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solar.swift; sourceTree = "<group>"; };
@@ -45,19 +36,12 @@
 		2269E9861B07D54200315741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2269E9881B07D54200315741 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2269E98B1B07D54200315741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2269E9911B07D54200315741 /* Pet FinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pet FinderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2269E9A11B07E03500315741 /* PetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PetTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		B0619EB221E65D8100659FF3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2269E9771B07D54200315741 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2269E98E1B07D54200315741 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -110,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				2269E97A1B07D54200315741 /* Pet Finder.app */,
-				2269E9911B07D54200315741 /* Pet FinderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +105,7 @@
 				0E2671521E75740D00723406 /* Model */,
 				0E2671511E7573FA00723406 /* View Controllers */,
 				2269E97F1B07D54200315741 /* AppDelegate.swift */,
+				B0619EB221E65D8100659FF3 /* Theme.swift */,
 				2269E9851B07D54200315741 /* Main.storyboard */,
 				2269E9881B07D54200315741 /* Images.xcassets */,
 				2269E98A1B07D54200315741 /* LaunchScreen.xib */,
@@ -158,24 +142,6 @@
 			productReference = 2269E97A1B07D54200315741 /* Pet Finder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2269E9901B07D54200315741 /* Pet FinderTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2269E99E1B07D54200315741 /* Build configuration list for PBXNativeTarget "Pet FinderTests" */;
-			buildPhases = (
-				2269E98D1B07D54200315741 /* Sources */,
-				2269E98E1B07D54200315741 /* Frameworks */,
-				2269E98F1B07D54200315741 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2269E9931B07D54200315741 /* PBXTargetDependency */,
-			);
-			name = "Pet FinderTests";
-			productName = "Pet FinderTests";
-			productReference = 2269E9911B07D54200315741 /* Pet FinderTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -188,11 +154,6 @@
 					2269E9791B07D54200315741 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 1010;
-					};
-					2269E9901B07D54200315741 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0820;
-						TestTargetID = 2269E9791B07D54200315741;
 					};
 				};
 			};
@@ -210,7 +171,6 @@
 			projectRoot = "";
 			targets = (
 				2269E9791B07D54200315741 /* Pet Finder */,
-				2269E9901B07D54200315741 /* Pet FinderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,13 +183,6 @@
 				2269E9871B07D54200315741 /* Main.storyboard in Resources */,
 				2269E98C1B07D54200315741 /* LaunchScreen.xib in Resources */,
 				2269E9891B07D54200315741 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2269E98F1B07D54200315741 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,27 +200,13 @@
 				2202157A1B0804F90000E359 /* SettingsTableViewController.swift in Sources */,
 				2269E9A21B07E03500315741 /* PetTableViewController.swift in Sources */,
 				220215761B07F3C00000E359 /* SearchTableViewController.swift in Sources */,
+				B0619EB321E65D8100659FF3 /* Theme.swift in Sources */,
 				224279DA1B2FC37B00E3B816 /* PetViewController.swift in Sources */,
 				0E2671541E757C1F00723406 /* AdoptedPetTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2269E98D1B07D54200315741 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2269E9931B07D54200315741 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2269E9791B07D54200315741 /* Pet Finder */;
-			targetProxy = 2269E9921B07D54200315741 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2269E9851B07D54200315741 /* Main.storyboard */ = {
@@ -427,54 +366,6 @@
 			};
 			name = Release;
 		};
-		2269E99F1B07D54200315741 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = RXJ69EWCMT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Pet FinderTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.raywenderlich.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pet Finder.app/Pet Finder";
-			};
-			name = Debug;
-		};
-		2269E9A01B07D54200315741 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = RXJ69EWCMT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Pet FinderTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.raywenderlich.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pet Finder.app/Pet Finder";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -492,15 +383,6 @@
 			buildConfigurations = (
 				2269E99C1B07D54200315741 /* Debug */,
 				2269E99D1B07D54200315741 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2269E99E1B07D54200315741 /* Build configuration list for PBXNativeTarget "Pet FinderTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2269E99F1B07D54200315741 /* Debug */,
-				2269E9A01B07D54200315741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
