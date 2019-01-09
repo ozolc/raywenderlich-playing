@@ -34,6 +34,7 @@ class SettingsTableViewController: UITableViewController {
     super.viewDidLoad()
     
     navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(dismissAnimated))
+    themeSelector.selectedSegmentIndex = Theme.current.rawValue
   }
 }
 
@@ -41,7 +42,9 @@ class SettingsTableViewController: UITableViewController {
 private extension SettingsTableViewController {
 
   @objc func dismissAnimated() {
-    dismiss(animated: true)
+    if let selectedTheme = Theme(rawValue: themeSelector.selectedSegmentIndex) {
+      selectedTheme.apply()
+    }
   }
 
   @IBAction func applyTheme(_ sender: UIButton) {
