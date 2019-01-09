@@ -45,6 +45,8 @@ class PetViewController: UIViewController {
     petImageView.image = UIImage(named: pet.imageName)
     
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Adopt", style: .plain, target: self, action: #selector(adopt))
+    
+    view.backgroundColor = Theme.current.backgroundColor
   }
 }
 
