@@ -44,6 +44,7 @@ private extension SettingsTableViewController {
   @objc func dismissAnimated() {
     if let selectedTheme = Theme(rawValue: themeSelector.selectedSegmentIndex) {
       selectedTheme.apply()
+      dismiss(animated: true, completion: nil)
     }
   }
 
