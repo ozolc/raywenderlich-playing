@@ -34,6 +34,19 @@ enum Theme: Int {
     }
   }
   
+  var barStyle: UIBarStyle {
+    switch self {
+    case .defaultTheme, .graphical:
+      return .default
+    case .dark:
+      return .black
+    }
+  }
+  
+  var navigationBackgroundImage: UIImage? {
+    return self == .graphical ? UIImage(named: "navBackground") : nil
+  }
+  
   func apply() {
     // 1
     UserDefaults.standard.set(rawValue, forKey: Keys.selectedTheme)
@@ -41,6 +54,9 @@ enum Theme: Int {
     
     // 2
     UIApplication.shared.delegate?.window??.tintColor = mainColor
+    
+    UINavigationBar.appearance().barStyle = barStyle
+    UINavigationBar.appearance().setBackgroundImage(navigationBackgroundImage, for: .default)
   }
   
 }
