@@ -62,6 +62,9 @@
                                 <constraint firstItem="tNU-qu-XBe" firstAttribute="centerX" secondItem="CEv-T9-NNB" secondAttribute="centerX" id="Kd4-BE-Ivc"/>
                                 <constraint firstItem="tNU-qu-XBe" firstAttribute="centerY" secondItem="CEv-T9-NNB" secondAttribute="centerY" id="qWQ-I4-1rE"/>
                             </constraints>
+                            <connections>
+                                <outlet property="label" destination="tNU-qu-XBe" id="Jai-Ci-9rs"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="uSH-PT-Kpi" id="VMi-zV-izi"/>
