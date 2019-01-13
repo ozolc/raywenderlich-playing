@@ -67,6 +67,34 @@ private extension FlickrPhotosViewController {
   func photo(for indexPath: IndexPath) -> FlickrPhoto {
     return searches[indexPath.section].searchResults[indexPath.row]
   }
+  
+  func performLargeImageFetch(for indexPath: IndexPath, flickrPhoto: FlickrPhoto) {
+    // 1
+    guard let cell = collectionView.cellForItem(at: indexPath) as? FlickrPhotoCell else { return }
+    
+    // 2
+    cell.activityIndicator.startAnimating()
+    
+    // 3
+    flickrPhoto.loadLargeImage { [weak self] result in
+      // 4
+      guard let self = self else {
+        return
+      }
+      
+      // 5
+      switch result {
+        // 6
+      case .results(let photo):
+        if indexPath == self.largePhotoIndexPath {
+          cell.imageView.image = photo.largeImage
+        }
+      case .error(_):
+        return
+      }
+    }
+  }
+  
 }
 
 // MARK: - UITextFieldDelegate
@@ -108,11 +136,32 @@ extension FlickrPhotosViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
-                                                  for: indexPath) as! FlickrPhotoCell
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? FlickrPhotoCell else {
+        preconditionFailure("Invalid cell type")
+    }
+    
     let flickrPhoto = photo(for: indexPath)
-    cell.backgroundColor = UIColor.white
+    
+    // 1
+    cell.activityIndicator.stopAnimating()
+    
+    // 2
+    guard indexPath == largePhotoIndexPath else {
+      cell.imageView.image = flickrPhoto.thumbnail
+      return cell
+    }
+    
+    // 3
+    guard flickrPhoto.largeImage == nil else {
+      cell.imageView.image = flickrPhoto.largeImage
+      return cell
+    }
+    
+    // 4
     cell.imageView.image = flickrPhoto.thumbnail
+    
+    // 5
+    performLargeImageFetch(for: indexPath, flickrPhoto: flickrPhoto)
     
     return cell
   }
