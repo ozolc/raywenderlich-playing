@@ -34,6 +34,61 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string></string>
+			</array>
+			<key>CFBundleTypeIconFiles</key>
+			<array>
+				<string>book_22.png</string>
+				<string>book_44.png</string>
+				<string>book_64.png</string>
+				<string>book_320.png</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Book Tracker Document</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.raywenderlich.BookTracker.btkr</string>
+			</array>
+		</dict>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Book Tracker Document</string>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>book_320.png</string>
+				<string>book_64.png</string>
+				<string>book_44.png</string>
+				<string>book_22.png</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>com.raywenderlich.BookTracker.btkr</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<string>btkr</string>
+				<key>public.mime-type</key>
+				<string>application/boottracker</string>
+			</dict>
+		</dict>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string>BookTrackerApp</string>
 	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
