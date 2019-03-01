@@ -50,8 +50,28 @@ struct Book: Codable {
 // MARK: - Exporting/Importing
 extension Book {
   func exportToURL() -> URL? {
-    // TODO
-    return nil
+    // 1
+    guard let encoded = try? JSONEncoder().encode(self) else { return nil }
+    
+    // 2
+    let documents = FileManager.default.urls(
+      for: .documentDirectory,
+      in: .userDomainMask
+      ).first
+    
+    guard let path = documents?.appendingPathComponent("/\(name).btkr") else {
+      return nil
+    }
+    
+    // 3
+    do {
+      try encoded.write(to: path, options: .atomicWrite)
+      return path
+    } catch {
+      print(error.localizedDescription)
+      return nil
+    }
+    
   }
   
   static func importData(from url: URL) {

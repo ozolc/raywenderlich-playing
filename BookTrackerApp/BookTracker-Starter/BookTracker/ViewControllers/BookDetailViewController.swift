@@ -80,8 +80,22 @@ final class BookDetailViewController: UIViewController {
     BookManager.shared.add(book: detailBook)
   }
   
-  @IBAction func share(_ sender: AnyObject) {
-    // TODO
+  @IBAction func share(_ sender: UIBarButtonItem) {
+    // Get latest changes
+    saveBook()
+    
+    // 1
+    guard
+      let detailBook = detailBook,
+      let url = detailBook.exportToURL()
+      else { return }
+    
+    // 2
+    let activity = UIActivityViewController(activityItems: ["Check out this book! I like using Book tracker.", url], applicationActivities: nil)
+    activity.popoverPresentationController?.barButtonItem = sender
+    
+    // 3
+    present(activity, animated: true, completion: nil)
   }
   
   @IBAction func pickPhoto(_ sender: AnyObject) {
