@@ -55,6 +55,16 @@ extension Book {
   }
   
   static func importData(from url: URL) {
-    // TODO
+    // 1
+    guard
+      let data = try? Data(contentsOf: url),
+      let book = try? JSONDecoder().decode(Book.self, from: data)
+      else { return }
+    
+    // 2
+    BookManager.shared.add(book: book)
+    
+    // 3
+    try? FileManager.default.removeItem(at: url)
   }
 }
