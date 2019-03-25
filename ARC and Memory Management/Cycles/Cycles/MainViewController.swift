@@ -101,8 +101,8 @@ class CarrierrSubscription {
   let number: String
   unowned let user: User
   
-  lazy var completePhoneNumber: () -> String = {
-    self.countryCode + " " + self.number
+  lazy var completePhoneNumber: () -> String = { [unowned self] in
+    return self.countryCode + " " + self.number
   }
   
   init(name: String, countryCode: String, number: String, user: User) {
