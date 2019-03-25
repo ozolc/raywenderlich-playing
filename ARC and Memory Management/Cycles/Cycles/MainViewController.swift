@@ -48,6 +48,28 @@ class MainViewController: UIViewController {
     iPhone.provision(carrierSubscription: subscription)
     
     print(subscription.completePhoneNumber)
+    
+    let greetingMaker: () -> String
+    
+    do {
+      let mermaid = WWDCGreeting(who: "caffeinated mermaid")
+      greetingMaker = mermaid.greetingMaker
+    }
+    
+    print(greetingMaker())
+  }
+  
+  class WWDCGreeting {
+    let who: String
+    
+    init(who: String) {
+      self.who = who
+    }
+    
+    lazy var greetingMaker: () -> String = { [unowned self] in
+      return "Hello \(self.who)"
+    }
+    
   }
   
 }
@@ -118,4 +140,5 @@ class CarrierrSubscription {
   deinit {
     print("Deallocating CarrierSubscription named \(name)")
   }
+  
 }
