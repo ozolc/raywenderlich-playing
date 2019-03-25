@@ -57,6 +57,14 @@ class MainViewController: UIViewController {
     }
     
     print(greetingMaker())
+    
+    do {
+      let ernie = Person(name: "Ernie")
+      let bert = Person(name: "Bert")
+      
+      ernie.friends.append(Unowned(bert))
+      bert.friends.append(Unowned(ernie))
+    }
   }
   
   class WWDCGreeting {
@@ -71,6 +79,32 @@ class MainViewController: UIViewController {
         return "No greeting available"
       }
       return "Hello \(self.who)"
+    }
+  }
+  
+  class Node {
+    var payload = 0
+    var next: Node?
+  }
+  
+  class Unowned<T: AnyObject> {
+    unowned var value: T
+    init (_ value: T) {
+      self.value = value
+    }
+  }
+  
+  class Person {
+    var name: String
+    var friends: [Unowned<Person>] = []
+    
+    init(name: String) {
+      self.name = name
+      print("New person instance: \(name)")
+    }
+    
+    deinit {
+      print("Person instance \(name) is being deallocated")
     }
     
   }
