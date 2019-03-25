@@ -29,7 +29,7 @@
 class Number {
   var countryCode: String
   var numberString: String
-  var contact: Contact
+  unowned var contact: Contact
 
   init?(countryCode: String, numberString: String, contact: Contact) {
     guard countryCode != "" || numberString != "" else {
