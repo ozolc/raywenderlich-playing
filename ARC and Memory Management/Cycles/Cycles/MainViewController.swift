@@ -38,6 +38,7 @@ class MainViewController: UIViewController {
   
   func runScenario() {
     let user = User(name: "John")
+    let iPhone = Phone(model: "iPhone Xs")
   }
   
 }
@@ -52,5 +53,19 @@ class User {
   
   deinit {
     print("Deallocating user named: \(name)")
+  }
+}
+
+class Phone {
+  let model: String
+  var owner: User?
+  
+  init(model: String) {
+    self.model = model
+    print("Phone \(model) was initialized")
+  }
+  
+  deinit {
+    print("Deallocating phone named: \(model)")
   }
 }
