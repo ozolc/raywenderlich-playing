@@ -29,7 +29,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-//  let user = User(name: "John")
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,12 +38,19 @@ class MainViewController: UIViewController {
   func runScenario() {
     let user = User(name: "John")
     let iPhone = Phone(model: "iPhone Xs")
+    user.add(phone: iPhone)
   }
   
 }
 
 class User {
   let name: String
+  private(set) var phones: [Phone] = []
+  
+  func add(phone: Phone) {
+    phones.append(phone)
+    phone.owner = self
+  }
   
   init(name: String) {
     self.name = name
