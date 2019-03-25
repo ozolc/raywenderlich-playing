@@ -66,7 +66,10 @@ class MainViewController: UIViewController {
       self.who = who
     }
     
-    lazy var greetingMaker: () -> String = { [unowned self] in
+    lazy var greetingMaker: () -> String = { [weak self] in
+      guard let self = self else {
+        return "No greeting available"
+      }
       return "Hello \(self.who)"
     }
     
