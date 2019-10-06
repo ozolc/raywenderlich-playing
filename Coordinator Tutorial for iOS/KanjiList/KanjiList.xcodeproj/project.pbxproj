@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA64D820377D0300593D25 /* LaunchScreen.storyboard */; };
-		4323D3DB1FAD05CD00F0FB1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1345B011F9E08BA00612B82 /* Main.storyboard */; };
 		4323D3E01FAD0CF600F0FB1E /* WordExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323D3DE1FAD0CF600F0FB1E /* WordExampleTableViewCell.swift */; };
 		4323D3E11FAD0CF600F0FB1E /* WordExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4323D3DF1FAD0CF600F0FB1E /* WordExampleTableViewCell.xib */; };
 		4323D3E41FAD110200F0FB1E /* KanjiDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323D3E21FAD110200F0FB1E /* KanjiDataTableViewCell.swift */; };
@@ -20,6 +19,9 @@
 		437264431FAD04F400A22393 /* KanjiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4372643B1FAD04F400A22393 /* KanjiListViewController.swift */; };
 		5D1B73EF1FC47B0600327A3F /* KanjiStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1B73EE1FC47B0600327A3F /* KanjiStorage.swift */; };
 		B056DAD02349CD7A00D6EEE5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B056DACF2349CD7A00D6EEE5 /* Coordinator.swift */; };
+		B056DAD32349CE5900D6EEE5 /* KanjiListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B056DAD12349CE5800D6EEE5 /* KanjiListViewController.xib */; };
+		B056DAD42349CE5900D6EEE5 /* KanjiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B056DAD22349CE5900D6EEE5 /* KanjiDetailViewController.xib */; };
+		B056DAD62349CF8500D6EEE5 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B056DAD52349CF8500D6EEE5 /* ApplicationCoordinator.swift */; };
 		C1345B051F9E08BA00612B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1345B041F9E08BA00612B82 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +39,10 @@
 		4372643B1FAD04F400A22393 /* KanjiListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanjiListViewController.swift; sourceTree = "<group>"; };
 		5D1B73EE1FC47B0600327A3F /* KanjiStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanjiStorage.swift; sourceTree = "<group>"; };
 		B056DACF2349CD7A00D6EEE5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B056DAD12349CE5800D6EEE5 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
+		B056DAD22349CE5900D6EEE5 /* KanjiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiDetailViewController.xib; sourceTree = "<group>"; };
+		B056DAD52349CF8500D6EEE5 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		C1345AFA1F9E08BA00612B82 /* KanjiList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanjiList.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1345B021F9E08BA00612B82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1345B041F9E08BA00612B82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,8 @@
 				4323D3DF1FAD0CF600F0FB1E /* WordExampleTableViewCell.xib */,
 				4323D3E21FAD110200F0FB1E /* KanjiDataTableViewCell.swift */,
 				4323D3E31FAD110200F0FB1E /* KanjiDataTableViewCell.xib */,
+				B056DAD22349CE5900D6EEE5 /* KanjiDetailViewController.xib */,
+				B056DAD12349CE5800D6EEE5 /* KanjiListViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,10 +145,10 @@
 				4372642E1FAD04F400A22393 /* Model */,
 				437264341FAD04F400A22393 /* Resources */,
 				437264361FAD04F400A22393 /* Screens */,
-				C1345B011F9E08BA00612B82 /* Main.storyboard */,
 				C1345B041F9E08BA00612B82 /* Assets.xcassets */,
 				18BA64D820377D0300593D25 /* LaunchScreen.storyboard */,
 				B056DACF2349CD7A00D6EEE5 /* Coordinator.swift */,
+				B056DAD52349CF8500D6EEE5 /* ApplicationCoordinator.swift */,
 			);
 			path = KanjiList;
 			sourceTree = "<group>";
@@ -206,10 +212,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4323D3DB1FAD05CD00F0FB1E /* Main.storyboard in Resources */,
 				437264401FAD04F400A22393 /* knji.json in Resources */,
 				4323D3E51FAD110200F0FB1E /* KanjiDataTableViewCell.xib in Resources */,
+				B056DAD32349CE5900D6EEE5 /* KanjiListViewController.xib in Resources */,
 				18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */,
+				B056DAD42349CE5900D6EEE5 /* KanjiDetailViewController.xib in Resources */,
 				4323D3E11FAD0CF600F0FB1E /* WordExampleTableViewCell.xib in Resources */,
 				C1345B051F9E08BA00612B82 /* Assets.xcassets in Resources */,
 			);
@@ -227,6 +234,7 @@
 				4323D3E41FAD110200F0FB1E /* KanjiDataTableViewCell.swift in Sources */,
 				4372643E1FAD04F400A22393 /* AppDelegate.swift in Sources */,
 				5D1B73EF1FC47B0600327A3F /* KanjiStorage.swift in Sources */,
+				B056DAD62349CF8500D6EEE5 /* ApplicationCoordinator.swift in Sources */,
 				437264421FAD04F400A22393 /* KanjiDetailViewController.swift in Sources */,
 				437264431FAD04F400A22393 /* KanjiListViewController.swift in Sources */,
 				4372643C1FAD04F400A22393 /* Kanji.swift in Sources */,
@@ -234,17 +242,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C1345B011F9E08BA00612B82 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C1345B021F9E08BA00612B82 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C1345B0A1F9E08BA00612B82 /* Debug */ = {
