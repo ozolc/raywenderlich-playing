@@ -32,6 +32,7 @@ class ApplicationCoordinator: Coordinator {
     let kanjiStorage: KanjiStorage
     let window: UIWindow
     let rootViewController: UINavigationController
+    let allKanjiListCoordinator: AllKanjiListCoordinator
     
     init(window: UIWindow) {
         self.window = window
@@ -39,15 +40,12 @@ class ApplicationCoordinator: Coordinator {
         rootViewController = UINavigationController()
         rootViewController.navigationBar.prefersLargeTitles = true
         
-        let emptyViewController = UIViewController()
-        emptyViewController.view.backgroundColor = .cyan
-        emptyViewController.title = "Title"
-        rootViewController.pushViewController(emptyViewController, animated: false)
-        
+        allKanjiListCoordinator = AllKanjiListCoordinator(presenter: rootViewController, kanjiStorage: kanjiStorage)
     }
     
     func start() {
         window.rootViewController = rootViewController
+        allKanjiListCoordinator.start()
         window.makeKeyAndVisible()
     }
 }

@@ -28,7 +28,13 @@
 
 import UIKit
 
+protocol KanjiListViewControllerDelegate: class {
+    func KanjiListViewControllerDelegate(_ selectedKanji: Kanji)
+}
+
 class KanjiListViewController: UIViewController {
+    
+    weak var delegate: KanjiListViewControllerDelegate?
   
   @IBOutlet weak var kanjiListTableView: UITableView! {
     didSet {
@@ -87,6 +93,9 @@ extension KanjiListViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let kanji = kanjiList[indexPath.row]
+    delegate?.KanjiListViewControllerDelegate(kanji)
+    tableView.deselectRow(at: indexPath, animated: true)
     
     defer {
       tableView.deselectRow(at: indexPath, animated: true)
@@ -95,8 +104,6 @@ extension KanjiListViewController: UITableViewDataSource, UITableViewDelegate {
     guard shouldOpenDetailsOnCellSelection == true else {
       return
     }
-    let kanji = kanjiList[indexPath.row]
-    performSegue(withIdentifier: "KanjiDetail", sender: kanji)
   }
   
   

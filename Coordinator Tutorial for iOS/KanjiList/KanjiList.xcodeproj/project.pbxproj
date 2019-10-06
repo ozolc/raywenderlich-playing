@@ -22,6 +22,7 @@
 		B056DAD32349CE5900D6EEE5 /* KanjiListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B056DAD12349CE5800D6EEE5 /* KanjiListViewController.xib */; };
 		B056DAD42349CE5900D6EEE5 /* KanjiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B056DAD22349CE5900D6EEE5 /* KanjiDetailViewController.xib */; };
 		B056DAD62349CF8500D6EEE5 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B056DAD52349CF8500D6EEE5 /* ApplicationCoordinator.swift */; };
+		B056DAD92349D38A00D6EEE5 /* AllKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B056DAD82349D38A00D6EEE5 /* AllKanjiListCoordinator.swift */; };
 		C1345B051F9E08BA00612B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1345B041F9E08BA00612B82 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		B056DAD12349CE5800D6EEE5 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
 		B056DAD22349CE5900D6EEE5 /* KanjiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiDetailViewController.xib; sourceTree = "<group>"; };
 		B056DAD52349CF8500D6EEE5 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		B056DAD82349D38A00D6EEE5 /* AllKanjiListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllKanjiListCoordinator.swift; sourceTree = "<group>"; };
 		C1345AFA1F9E08BA00612B82 /* KanjiList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanjiList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1345B041F9E08BA00612B82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,16 @@
 			path = KanjiList;
 			sourceTree = "<group>";
 		};
+		B056DAD72349D36700D6EEE5 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B056DACF2349CD7A00D6EEE5 /* Coordinator.swift */,
+				B056DAD52349CF8500D6EEE5 /* ApplicationCoordinator.swift */,
+				B056DAD82349D38A00D6EEE5 /* AllKanjiListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		C1345AF11F9E08B900612B82 = {
 			isa = PBXGroup;
 			children = (
@@ -141,14 +153,13 @@
 		C1345AFC1F9E08BA00612B82 /* KanjiList */ = {
 			isa = PBXGroup;
 			children = (
+				B056DAD72349D36700D6EEE5 /* Coordinator */,
 				437264311FAD04F400A22393 /* Application */,
 				4372642E1FAD04F400A22393 /* Model */,
 				437264341FAD04F400A22393 /* Resources */,
 				437264361FAD04F400A22393 /* Screens */,
 				C1345B041F9E08BA00612B82 /* Assets.xcassets */,
 				18BA64D820377D0300593D25 /* LaunchScreen.storyboard */,
-				B056DACF2349CD7A00D6EEE5 /* Coordinator.swift */,
-				B056DAD52349CF8500D6EEE5 /* ApplicationCoordinator.swift */,
 			);
 			path = KanjiList;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				4372643E1FAD04F400A22393 /* AppDelegate.swift in Sources */,
 				5D1B73EF1FC47B0600327A3F /* KanjiStorage.swift in Sources */,
 				B056DAD62349CF8500D6EEE5 /* ApplicationCoordinator.swift in Sources */,
+				B056DAD92349D38A00D6EEE5 /* AllKanjiListCoordinator.swift in Sources */,
 				437264421FAD04F400A22393 /* KanjiDetailViewController.swift in Sources */,
 				437264431FAD04F400A22393 /* KanjiListViewController.swift in Sources */,
 				4372643C1FAD04F400A22393 /* Kanji.swift in Sources */,
