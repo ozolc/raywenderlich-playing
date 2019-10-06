@@ -45,7 +45,7 @@ class KanjiListViewController: UIViewController {
     
     var kanjiList: [Kanji] = []
     
-    var cellAccessoryType = UITableViewCellAccessoryType.disclosureIndicator
+    var cellAccessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 }
 
 extension KanjiListViewController: UITableViewDataSource, UITableViewDelegate {
