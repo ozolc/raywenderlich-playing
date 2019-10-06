@@ -56,6 +56,8 @@ class KanjiDetailCoordinator: Coordinator {
 extension KanjiDetailCoordinator: KanjiDetailViewControllerDelegate {
     func kanjiDetailViewControllerDidSelectWord(_ word: String) {
         let wordKanjiListViewController = KanjiListViewController(nibName: nil, bundle: nil)
+        wordKanjiListViewController.cellAccessoryType = .none
+        
         let kanjiForWord = kanjiStorage.kanjiForWord(word)
         wordKanjiListViewController.kanjiList = kanjiForWord
         wordKanjiListViewController.title = word
